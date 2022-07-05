@@ -66,7 +66,8 @@ public class restResources {
         try
         {
 
-           if( (((Object)age).getClass().getSimpleName()) != "int")
+           //if( (((Object)age).getClass().getSimpleName()) != "int")
+            if(name.equals("") || subject.equals("") || age <= 0)
            {
                throw new Exception();
            }
@@ -80,7 +81,7 @@ public class restResources {
         }
         catch(Exception e)
         {
-            return Response.status(400).entity("invalid data type").build();
+            return Response.status(400).entity("incorrect parameters entered").build();
         }
     }
     @PUT
